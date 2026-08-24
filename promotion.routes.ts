@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { getAllPromotions, getPromotionBySlug, createPromotion } from '../controllers/promotion.controller';
-import { authenticateToken } from '../middleware/auth.middleware';
+import { getAllPromotions, getPromotionBySlug, createPromotion } from './promotion.controller';
+import { authenticateToken } from './auth.middleware';
 
 const router = Router();
 
