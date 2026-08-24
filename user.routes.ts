@@ -6,8 +6,8 @@ import {
   toggleFavoriteGame,
   uploadKYCDocument,
   getKYCDocuments
-} from '../controllers/user.controller';
-import { authenticateToken } from '../middleware/auth.middleware';
+} from './user.controller';
+import { authenticateToken } from './auth.middleware';
 
 const router = Router();
 
