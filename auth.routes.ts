@@ -10,8 +10,8 @@ import {
   verify2FA,
   disable2FA,
   get2FAStatus
-} from '../controllers/auth.controller';
-import { authenticateToken } from '../middleware/auth.middleware';
+} from './auth.controller';
+import { authenticateToken } from './auth.middleware';
 
 const router = Router();
 
