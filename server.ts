@@ -5,18 +5,19 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-// Import routes
-import authRoutes from './routes/auth.routes';
-import gameRoutes from './routes/game.routes';
-import userRoutes from './routes/user.routes';
-import promotionRoutes from './routes/promotion.routes';
-import transactionRoutes from './routes/transaction.routes';
+// Import routes (Inayos ang paths para sa root directory level)
+import authRoutes from './auth.routes';
+import gameRoutes from './game.routes';
+import userRoutes from './user.routes';
+import promotionRoutes from './promotion.routes';
+import transactionRoutes from './transaction.routes';
 
 dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = 'mongodb+srv://sandovalspetiten_db_user:r1MLjFuai7rMt5c6@cluster0.lha9ffg.mongodb.net/cassanova?retryWrites=true&w=majority';
+
 // Middleware
 app.use(cors());
 app.use(express.json());
