@@ -1,7 +1,7 @@
 import { Response } from 'express';
-import { AuthRequest } from '../middleware/auth.middleware';
-import Transaction from '../models/Transaction';
-import User from '../models/User';
+import { AuthRequest } from './auth.middleware';
+import Transaction from './Transaction';
+import User from './User';
 
 export const getUserTransactions = async (req: AuthRequest, res: Response) => {
   try {
