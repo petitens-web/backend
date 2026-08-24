@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/User';
+import User from './User';
 import crypto from 'crypto';
 import speakeasy from 'speakeasy';
 import QRCode from 'qrcode';
-import { AuthRequest } from '../middleware/auth.middleware';
+import { AuthRequest } from './auth.middleware';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 
@@ -86,7 +86,7 @@ export const login = async (req: Request, res: Response) => {
       if (!verified) {
         // Check backup codes
         const backupCodeIndex = user.twoFactorBackupCodes?.findIndex(
-          code => code === twoFactorCode
+          (code: string) => code === twoFactorCode
         );
         
         if (backupCodeIndex === undefined || backupCodeIndex === -1) {
